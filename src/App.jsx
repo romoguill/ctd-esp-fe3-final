@@ -12,8 +12,8 @@ import NoPage from "./Routes/NoPage";
 function App() {
   return (
       <div className="App">
-          <Navbar/>
           <BrowserRouter>
+            <Navbar/>
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/contacto" element={<Contact/>} />
