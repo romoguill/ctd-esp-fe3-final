@@ -12,7 +12,7 @@ export const ContextProvider = ({ children }) => {
   const [favs, setFavs] = useState([]);
 
   const toggleTheme = () => {
-    theme === 'ligth' ? setTheme('dark') : setTheme('light');
+    theme === 'light' ? setTheme('dark') : setTheme('light');
   };
 
   return (
