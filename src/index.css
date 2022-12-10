@@ -11,6 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
 .favButton {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
@@ -21,6 +31,7 @@ code {
 
 h1 {
   text-align: center;
+  margin-top: 0;
 }
 
 nav {
@@ -49,6 +60,10 @@ nav span {
   color: red;
 }
 
+nav.dark {
+  background-color: #444;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -66,9 +81,7 @@ footer {
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
   height: 40px;
-  margin-top: 2rem;
 }
 
 footer > img {
@@ -181,4 +194,9 @@ tr:nth-child(even) {
   background-color: black;
   cursor: pointer;
   height: 30px;
+}
+
+.theme-change.dark {
+  background-color: #aaa;
+  border: none;
 }
