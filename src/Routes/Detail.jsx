@@ -6,14 +6,14 @@ import { useParams } from 'react-router-dom';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
-  const id = useParams();
+  const params = useParams();
 
-  const [dentista, setDentista] = useState(undefined);
+  const [dentista, setDentista] = useState();
 
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   const getDentista = async () => {
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/users/${id}`
+      `https://jsonplaceholder.typicode.com/users/${params.id}`
     );
     const data = await response.json();
     setDentista(data);
@@ -23,9 +23,11 @@ const Detail = () => {
     getDentista();
   }, []);
 
+  console.log(dentista);
+
   return (
     <>
-      <h1>Detail Dentist {id} </h1>
+      <h1>Detail Dentist {params.id} </h1>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
       <table className="tabla-detalle">
@@ -40,10 +42,10 @@ const Detail = () => {
 
         <tbody>
           <tr>
-            <td>{dentista.name}</td>
-            <td>{dentista.email}</td>
-            <td>{dentista.phone}</td>
-            <td>{dentista.website}</td>
+            <td>{dentista?.name}</td>
+            <td>{dentista?.email}</td>
+            <td>{dentista?.phone}</td>
+            <td>{dentista?.website}</td>
           </tr>
         </tbody>
       </table>
