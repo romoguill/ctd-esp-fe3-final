@@ -9,14 +9,17 @@ const Card = ({ name, username, id }) => {
 
   const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
-    if (favs.some((favsId) => favsId === id)) {
+    if (favs.some((fav) => fav.id === id)) {
       alert('El dentista ya se encontraba agregado');
     } else {
-      localStorage.setItem('favs', JSON.stringify(favs));
       alert('El dentista fue agregado a favoritos');
       setFavs((prevFavs) => [...prevFavs, { name, username, id }]);
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem('favs', JSON.stringify(favs));
+  }, [favs]);
 
   return (
     <div className="card">

@@ -21,6 +21,7 @@ h6,
 p {
   margin-top: 0;
 }
+
 .favButton {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
@@ -62,6 +63,10 @@ nav span {
 
 nav.dark {
   background-color: #444;
+}
+
+nav.dark a {
+  color: white;
 }
 
 a {
@@ -199,4 +204,9 @@ tr:nth-child(even) {
 .theme-change.dark {
   background-color: #aaa;
   border: none;
+}
+
+.error-msg {
+  font: 10px;
+  color: red;
 }

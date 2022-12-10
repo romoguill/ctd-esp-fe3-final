@@ -12,8 +12,10 @@ const Form = () => {
     e.preventDefault();
     if (isValidEmail(email) && isValidName(name)) {
       setFlashMsg(`Gracias ${name}, te contactaremos cuanto antes via mail`);
+      setErrorMsg(undefined);
     } else {
       setErrorMsg('Por favor verifique sus datos');
+      setFlashMsg(undefined);
     }
   };
 
@@ -35,6 +37,8 @@ const Form = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <button type="submit">Send</button>
+        {errorMsg && <p className="error-msg">{errorMsg}</p>}
+        {flashMsg && <p>{flashMsg}</p>}
       </form>
     </div>
   );
